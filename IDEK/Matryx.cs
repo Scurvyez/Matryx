@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace Matryx
 {
@@ -14,27 +13,52 @@ namespace Matryx
 
         public static void Main()
         {
-            Console.Title = "A Solid Attempt: Sum Matryx Shit";
+            Console.Title = "Matryx Shit";
 
             // Makes console window max available screen size.
-            Console.WindowHeight = Console.BufferHeight = Console.LargestWindowHeight;
-            Console.WindowWidth = Console.BufferWidth = Console.LargestWindowWidth;
+            //Console.WindowHeight = Console.BufferHeight = Console.LargestWindowHeight;
+            //Console.WindowWidth = Console.BufferWidth = Console.LargestWindowWidth;
             Console.CursorVisible = false;
 
             Initialize(out int w, out int h, out int[] y, out int[] l);
 
             while (true)
             {
+                // Keep creating new falling columns.
                 MatrixStep(w, h, y, l);
                 
                 // Determine speed of falling columns.
                 // Different depending on window size and PC.
-                System.Threading.Thread.Sleep(21);
+                System.Threading.Thread.Sleep(40);
 
-                // Refreshes the console, if needed.
+                // Refreshes the console, if needed. (Window re-sizing)
                 if (Console.KeyAvailable)
                     if (Console.ReadKey().Key == ConsoleKey.F5)
                         Initialize(out w, out h, out y, out l);
+            }
+        }
+
+        // Get new random.
+        public static Random r = new Random();
+
+        // int y and int l are arrays.
+        public static void Initialize(out int width, out int height, out int[] y, out int[] l)
+        {
+            int heightOne;
+
+            // Sets length of falling columns, relative to window size.
+            int heightTwo = heightOne = (height = Console.WindowHeight) / 7;
+            width = Console.WindowWidth - 1;
+            y = new int[width];
+            l = new int[width];
+            int x;
+            // W/o clearing the console the old characters will remain and the console will fill up.
+            Console.Clear();
+
+            for (x = 0; x < width; ++x)
+            {
+                y[x] = r.Next(height - 1);
+                l[x] = r.Next(heightTwo * ((x % 11 != 4) ? 2 : 1), heightOne * ((x % 11 != 4) ? 2 : 1));
             }
         }
 
@@ -48,14 +72,14 @@ namespace Matryx
                 {
                     // Any column without a leading character.
                     // To spice things up. lol
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Red;
                 }
 
                 else
                 {
                     // The typical color of most characters.
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    // Make first character in column white.
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    // Make first character in each column white.
                     Console.SetCursorPosition(x, Columns(y[x] - 1 - (l[x] / 25), height));
                     Console.Write(RandChar());
                     Console.ForegroundColor = ConsoleColor.White;
@@ -78,27 +102,6 @@ namespace Matryx
             char randomLetter = Convert.ToChar(i);
 
             return randomLetter;
-        }
-
-        public static Random r = new Random();
-
-        public static void Initialize(out int width, out int height, out int[] y, out int[] l)
-        {
-            int heightOne;
-
-            // Sets length of falling columns, relative to window size.
-            int heightTwo = heightOne = (height = Console.WindowHeight) / 7;
-            width = Console.WindowWidth - 1;
-            y = new int[width];
-            l = new int[width];
-            int x;
-            Console.Clear();
-
-            for (x = 0; x < width; ++x)
-            {
-                y[x] = r.Next(height);
-                l[x] = r.Next(heightTwo * ((x % 11 != 10) ? 2 : 1), heightOne * ((x % 11 != 10) ? 2 : 1));
-            }
         }
 
         public static int Columns(int n, int height)
