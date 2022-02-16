@@ -72,8 +72,8 @@ namespace Matryx
 
         static char RandChar()
         {
-            // Generates a random ASCII character or number from 0-9.
-            int i = r.Next(1, 3) == 1 ? r.Next(65, 91) : r.Next(97, 123);
+            // Generates a random ASCII character.
+            int i = r.Next(1, 3) == 1 ? r.Next(48, 57) : r.Next(192, 255);
             char randomLetter = Convert.ToChar(i);
 
             return randomLetter;
