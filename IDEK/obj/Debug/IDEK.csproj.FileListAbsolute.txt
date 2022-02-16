@@ -1,0 +1,14 @@
+S:\CODING\IDEK\IDEK\IDEK\obj\Debug\IDEK.csproj.AssemblyReference.cache
+S:\CODING\IDEK\IDEK\IDEK\obj\Debug\IDEK.csproj.CoreCompileInputs.cache
+S:\CODING\IDEK\Assemblies\Matryx.exe.config
+S:\CODING\IDEK\Assemblies\Matryx.exe
+S:\CODING\IDEK\Assemblies\Matryx.pdb
+S:\CODING\IDEK\IDEK\IDEK\obj\Debug\Matryx.exe
+S:\CODING\IDEK\IDEK\IDEK\obj\Debug\Matryx.pdb
+S:\CODING\Matryx\Assemblies\Matryx.exe.config
+S:\CODING\Matryx\Assemblies\Matryx.exe
+S:\CODING\Matryx\Assemblies\Matryx.pdb
+S:\CODING\Matryx\Matryx\IDEK\obj\Debug\IDEK.csproj.AssemblyReference.cache
+S:\CODING\Matryx\Matryx\IDEK\obj\Debug\IDEK.csproj.CoreCompileInputs.cache
+S:\CODING\Matryx\Matryx\IDEK\obj\Debug\Matryx.exe
+S:\CODING\Matryx\Matryx\IDEK\obj\Debug\Matryx.pdb
