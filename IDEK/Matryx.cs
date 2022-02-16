@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Matryx
 {
@@ -16,8 +17,8 @@ namespace Matryx
             Console.Title = "A Solid Attempt: Sum Matryx Shit";
 
             // Makes console window max available screen size.
-            //Console.WindowHeight = Console.BufferHeight = Console.LargestWindowHeight;
-            //Console.WindowWidth = Console.BufferWidth = Console.LargestWindowWidth;
+            Console.WindowHeight = Console.BufferHeight = Console.LargestWindowHeight;
+            Console.WindowWidth = Console.BufferWidth = Console.LargestWindowWidth;
             Console.CursorVisible = false;
 
             Initialize(out int w, out int h, out int[] y, out int[] l);
