@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Matryx
 {
+    /// <summary>
+    /// This class generates and runs a matrix-like rain effect on screen, until closed.
+    /// </summary>
     public class Matryx
     {
         // Lets piece together that cool matrix effect!
